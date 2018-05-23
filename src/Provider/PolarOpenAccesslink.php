@@ -44,9 +44,10 @@ class PolarOpenAccesslink extends AbstractProvider
         $grant = $this->verifyGrant($grant);
 
         $params = [
-            'client_id'     => $this->clientId,
-            'client_secret' => $this->clientSecret,
-            'redirect_uri'  => $this->redirectUri
+            //'client_id'     => $this->clientId,
+            //'client_secret' => $this->clientSecret,
+            'redirect_uri'  => $this->redirectUri,
+            'grant_type'    => 'authorization_code'
         ];
 
         $params   = $grant->prepareRequestParameters($params, $options);
@@ -83,7 +84,7 @@ class PolarOpenAccesslink extends AbstractProvider
      */
     public function getBaseAuthorizationUrl()
     {
-        return self::BASE_AUTHENTICATION_URL . '/authorization';
+        return self::BASE_AUTHENTICATION_URL . 'authorization';
     }
 
     /**
@@ -99,7 +100,7 @@ class PolarOpenAccesslink extends AbstractProvider
      */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return self::BASE_MYSPORTS_URL . '/' . $this->apiVersion . '/athlete';
+        return '/' . $this->apiVersion . '/athlete';
     }
 
     /**
@@ -107,14 +108,12 @@ class PolarOpenAccesslink extends AbstractProvider
      *
      * Get the default scopes used by this provider.
      *
-     * This should not be a complete list of all scopes, but the minimum
-     * required for the provider user interface!
      *
      * @return array
      */
     protected function getDefaultScopes()
     {
-        return [''];
+        return ['accesslink.read_all'];
     }
 
     /**
