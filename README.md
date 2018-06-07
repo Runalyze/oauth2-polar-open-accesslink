@@ -7,7 +7,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/runalyze/oauth2-polar-open-accesslink.svg?style=flat-square)](https://scrutinizer-ci.com/g/runalyze/oauth2-polar-open-accesslink/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/runalyze/oauth2-polar-open-accesslink.svg?style=flat-square)](https://packagist.org/packages/runalyze/oauth2-polar-open-accesslink)
 
-This package provides Polar Open Accesslink OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
+    This package provides Polar Open Accesslink OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
 ## Install
 

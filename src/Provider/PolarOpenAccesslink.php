@@ -44,8 +44,6 @@ class PolarOpenAccesslink extends AbstractProvider
         $grant = $this->verifyGrant($grant);
 
         $params = [
-            //'client_id'     => $this->clientId,
-            //'client_secret' => $this->clientSecret,
             'redirect_uri'  => $this->redirectUri,
             'grant_type'    => 'authorization_code'
         ];
