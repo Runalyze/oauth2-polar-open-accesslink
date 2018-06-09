@@ -96,9 +96,9 @@ class PolarOpenAccesslink extends AbstractProvider
     /**
      * @inheritDoc
      */
-    public function getResourceOwnerDetailsUrl(AccessToken $token)
+    public function getResourceOwnerDetailsUrl(AccessToken $token, $userId)
     {
-        return self::BASE_DATA_URL.'/v' . $this->apiVersion . '/users/'.$this->getAccessToken->getValues()['x_user_id'];
+        return self::BASE_DATA_URL.'/v' . $this->apiVersion . '/users/'.$userId;
     }
 
     /**
@@ -162,4 +162,14 @@ class PolarOpenAccesslink extends AbstractProvider
         return $this->apiVersion;
     }
 
+    /**
+     * @inheritDoc
+     */
+    protected function getDefaultHeaders()
+    {
+        return [
+            'Accept'          => 'application/json',
+            'Accept-Encoding' => 'gzip',
+        ];
+    }
 }
