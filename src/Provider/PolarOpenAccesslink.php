@@ -96,9 +96,9 @@ class PolarOpenAccesslink extends AbstractProvider
     /**
      * @inheritDoc
      */
-    public function getResourceOwnerDetailsUrl(AccessToken $token, $userId)
+    public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return self::BASE_DATA_URL.'/v' . $this->apiVersion . '/users/'.$userId;
+        return self::BASE_DATA_URL.'/v' . $this->apiVersion . '/users/'.$this->getAccessToken->getValues()['x_user_id'];
     }
 
     /**
