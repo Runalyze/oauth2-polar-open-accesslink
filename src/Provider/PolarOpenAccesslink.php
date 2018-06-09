@@ -131,6 +131,16 @@ class PolarOpenAccesslink extends AbstractProvider
     /**
      * @inheritDoc
      */
+    protected function getDefaultHeaders()
+    {
+        return [
+            'content-type' => 'application/json'
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
     protected function createResourceOwner(array $response, AccessToken $token)
     {
         return null;
