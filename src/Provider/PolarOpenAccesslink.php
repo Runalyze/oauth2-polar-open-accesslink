@@ -58,6 +58,23 @@ class PolarOpenAccesslink extends AbstractProvider
     }
 
     /**
+     * Returns a prepared request for requesting an access token.
+     *
+     * @param array $params Query string parameters
+     * @return RequestInterface
+     */
+    public function getBasicRequest($method, $url, array $options = [])
+    {
+        $options['headers']['Authorization'] = 'Basic ' . base64_encode(implode(':', [
+                $this->clientId,
+                $this->clientSecret,
+            ]));
+        return $this->getRequest($method, $url, $options);
+    }
+
+
+
+    /**
      * Builds request options used for requesting an access token.
      *
      * @param  array $params
