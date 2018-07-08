@@ -175,8 +175,7 @@ class PolarOpenAccesslink extends AbstractProvider
     protected function getDefaultHeaders()
     {
         return [
-            'Accept'          => 'application/json',
-            'Accept-Encoding' => 'gzip',
+            'Accept-Encoding' => 'gzip'
         ];
     }
 }
