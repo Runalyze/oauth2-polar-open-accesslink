@@ -90,6 +90,23 @@ class PolarOpenAccesslink extends AbstractProvider
             ]));
         return $options;
     }
+    
+        /**
+     * Returns a prepared request for requesting an access token.
+     *
+     * @param array $params Query string parameters
+     * @return RequestInterface
+     */
+    protected function getAccessTokenRequest(array $params)
+    {
+        $method  = $this->getAccessTokenMethod();
+        $url     = $this->getAccessTokenUrl($params);
+        $options = $this->optionProvider->getAccessTokenOptions($this->getAccessTokenMethod(), $params);
+
+        return $this->getBasicRequest($method, $url, $options);
+    }
+
+
 
 
     /**
