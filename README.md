@@ -1,4 +1,4 @@
-# [inProgress-inoperable] Polar Open Accesslink for OAuth 2.0 Client
+# Polar Open Accesslink for OAuth 2.0 Client
 
 [![Latest Version](https://img.shields.io/github/release/runalyze/oauth2-polar-open-accesslink.svg?style=flat)](https://github.com/runalyze/oauth2-polar-open-accesslink/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
